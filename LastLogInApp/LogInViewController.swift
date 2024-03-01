@@ -38,12 +38,6 @@ class LogInViewController: UIViewController {
     }
     
     
-    @IBAction func userTextFieldAction() {
-    }
-    
-    @IBAction func passwordTextFieldAction() {
-    }
-    
     @IBAction func logInAction() {
         if checkLoginData() {
             performSegue(withIdentifier: "userScreen", sender: nil)

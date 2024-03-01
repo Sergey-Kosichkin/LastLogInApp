@@ -26,17 +26,11 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" smartDashesType="no"/>
-                                                <connections>
-                                                    <action selector="userTextFieldAction" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gDr-Fx-SyU"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDU-rr-l0v">
                                                 <rect key="frame" x="0.0" y="51" width="313" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no"/>
-                                                <connections>
-                                                    <action selector="passwordTextFieldAction" destination="BYZ-38-t0r" eventType="editingDidEnd" id="FL4-4B-amX"/>
-                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
