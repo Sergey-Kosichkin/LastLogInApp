@@ -13,15 +13,14 @@ class LogInViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     
-    private let userData = (user: "User", password: "Password")
-    
+    private let userData = User.getUser()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
         view.addGestureRecognizer(tap)
         
         userTextField.delegate = self
@@ -31,10 +30,27 @@ class LogInViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let userPageVC = segue.destination as? UserPageViewController else {
+        guard let tabBarController = segue.destination as? UITabBarController else {
             return
         }
-        userPageVC.userData = userTextField.text
+        guard let viewControllers = tabBarController.viewControllers else {
+            return
+        }
+        
+        for viewController in viewControllers {
+            if let userPageVC = viewController as? UserPageViewController {
+                userPageVC.userData = userData
+            } else if let navigationVC = viewController as? UINavigationController {
+                
+                if let aboutUserVC = navigationVC.topViewController as? AboutMeViewController {
+                    aboutUserVC.userData = userData
+                }
+                
+            }
+            
+        }
+        
+        return
     }
     
     

@@ -12,12 +12,12 @@ class UserPageViewController: UIViewController {
     @IBOutlet var userLabel: UILabel!
     
     
-    var userData: String!
+    var userData: User!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userLabel.text = "Welcome, \(userData ?? "")!"
+        userLabel.text = "Welcome, \(userData.person.name) \(userData.person.surname)!"
         
     }
     
